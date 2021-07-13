@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Demo GetSelectOptionData</title>
+</head>
+<body bgcolor="cyan">
+<center>
+<h1>selection box with a list of 5 countries. When the user selects a country, its capital will be printed next to the list</h1>
+<form name="demoForm">
+<select name="demoSelect" onchange="showData()">
+<option value="Not selected any country">Select:</option>
+<option value="Delhi">India</option>
+<option value="maskov">Rusia</option>
+<option value="Tokyo">Japan</option>
+<option value="Islamad">pakistan</option>
+<option value="washington DC">US</option>
+</select>
+</form>
+
+<p id="firstP">&nbsp;</p>
+<h2 style="color:blue" id="secondP">&nbsp;</h2>
+<b><h2><p style="color:Red" id="thirdP">&nbsp;</p></h2><b>
+</center>
+
+<script>
+function showData() {
+var theSelect = demoForm.demoSelect;
+var firstP = document.getElementById('firstP');
+var secondP = document.getElementById('secondP');
+var thirdP = document.getElementById('thirdP');
+/*firstP.innerHTML = ('This option\'s number is: ' + theSelect.selectedIndex + ' (Javascript numbers start at 0)');*/
+secondP.innerHTML = (' capital is: ' + theSelect[theSelect.selectedIndex].value);
+thirdP.innerHTML = (' country is: ' + theSelect[theSelect.selectedIndex].text);
+}
+</script>
+</body>
+</html>
+
